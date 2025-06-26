@@ -23,6 +23,13 @@
             border: 1px solid #ddd;
             margin-bottom: 10px;
         }
+        .is-invalid {
+            border-color: #dc3545 !important;
+        }
+        .button_row.invalid {
+            outline: 2px solid #dc3545;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -49,17 +56,13 @@
             <h4 class="breachclaim_subheadingtext">Have you been a Southern Water customer or employee?</h4>
             <div class="button_row">
                 <div class="button_cal">
-                    <input type="radio" id="radio1" name="customer_or_employee" value="Yes" required="">
-                    <label for="radio1">Yes</label>
+                    <input type="radio" id="radio1" name="customer_or_employee" value="Yes" required>
+                    <label for="radio1" onclick="validateAndProceed(1)">Yes</label>
                 </div>
                 <div class="button_cal">
-                    <input type="radio" id="radio2" name="customer_or_employee" value="No" required="">
-                    <label for="radio2">No</label>
+                    <input type="radio" id="radio2" name="customer_or_employee" value="No" required>
+                    <label for="radio2" onclick="validateAndProceed(1)">No</label>
                 </div>
-            </div>
-            <div class="button_box">
-                <button type="button" class="submitbtn_design" onclick="validateStep(1)">Start Your Claim</button>
-                <i class="fa-solid fa-arrow-right-long submitbtn_rgticondesign"></i>
             </div>
         </div>
 
@@ -68,40 +71,32 @@
             <h4 class="breachclaim_subheadingtext">Have you been notified that your data may have been breached?</h4>
             <div class="button_row block_area">
                 <div class="button_cal breached_button_cal mb-3">
-                    <input type="radio" id="radio3" name="data_breach_notified" value="Yes" required="">
-                    <label for="radio3">Yes</label>
+                    <input type="radio" id="radio3" name="data_breach_notified" value="Yes" required>
+                    <label for="radio3" onclick="validateAndProceed(2)">Yes</label>
                 </div>
                 <div class="button_cal breached_button_cal">
-                    <input type="radio" id="radio4" name="data_breach_notified" value="No" required="">
-                    <label for="radio4">No</label>
+                    <input type="radio" id="radio4" name="data_breach_notified" value="No" required>
+                    <label for="radio4" onclick="validateAndProceed(2)">No</label>
                 </div>
             </div>
-            <button type="button" class="kxnext_btndesign" onclick="validateStep(2)">
-                Next
-                <i class="fa-solid fa-arrow-right-long nextright_icondesign"></i>
-            </button>
         </div>
 
         <!-- Step 3 -->
         <div class="form-step" id="step3">
-            <h4 class="breachclaim_subheadingtext">Do you have a copy, photo, or screenshot of the notification informing you of the breach? (If not, you will need to provide this later to progress your claim)</h4>
+            <h4 class="breachclaim_subheadingtext">Do you have a copy, photo, or screenshot of the notification informing you of the breach?</h4>
             <div class="button_row block_area">
                 <div class="button_cal breached_button_cal mb-3">
-                    <input type="radio" id="radio5" name="have_copy" value="Yes" required="">
-                    <label for="radio5">Yes</label>
+                    <input type="radio" id="radio5" name="have_copy" value="Yes" required>
+                    <label for="radio5" onclick="validateAndProceed(3)">Yes</label>
                 </div>
                 <div class="button_cal breached_button_cal">
-                    <input type="radio" id="radio6" name="have_copy" value="No" required="">
-                    <label for="radio6">No</label>
+                    <input type="radio" id="radio6" name="have_copy" value="No" required>
+                    <label for="radio6" onclick="validateAndProceed(3)">No</label>
                 </div>
             </div>
-            <button type="button" class="kxnext_btndesign" onclick="validateStep(3)">
-                Next
-                <i class="fa-solid fa-arrow-right-long nextright_icondesign"></i>
-            </button>
         </div>
 
-        <!-- Step 4 -->
+        <!-- Step 4 (Keep Next button) -->
         <div class="form-step" id="step4">
             <h4 class="breachclaim_subheadingtext">Please enter the reference from your notification</h4>
             <input type="text" placeholder="Please enter the reference from your notification" class="form-control question_formdesign" id="notification_ref" required>
@@ -116,18 +111,14 @@
             <h4 class="breachclaim_subheadingtext">Have you suffered distress and/or anxiety upon learning that your sensitive and confidential information may have been stolen?</h4>
             <div class="button_row block_area">
                 <div class="button_cal breached_button_cal mb-3">
-                    <input type="radio" id="radio7" name="suffered_distress" value="Yes" required="">
-                    <label for="radio7">Yes</label>
+                    <input type="radio" id="radio7" name="suffered_distress" value="Yes" required>
+                    <label for="radio7" onclick="validateAndProceed(5)">Yes</label>
                 </div>
                 <div class="button_cal breached_button_cal">
-                    <input type="radio" id="radio8" name="suffered_distress" value="No" required="">
-                    <label for="radio8">No</label>
+                    <input type="radio" id="radio8" name="suffered_distress" value="No" required>
+                    <label for="radio8" onclick="validateAndProceed(5)">No</label>
                 </div>
             </div>
-            <button type="button" class="kxnext_btndesign" onclick="validateStep(5)">
-                Next
-                <i class="fa-solid fa-arrow-right-long nextright_icondesign"></i>
-            </button>
         </div>
 
         <!-- Step 6 -->
@@ -135,21 +126,17 @@
             <h4 class="breachclaim_subheadingtext">Have you at any point been eligible for government assisted payments with Southern Water?</h4>
             <div class="button_row block_area">
                 <div class="button_cal breached_button_cal mb-3">
-                    <input type="radio" id="radio9" name="gov_assistance" value="Yes" required="">
-                    <label for="radio9">Yes</label>
+                    <input type="radio" id="radio9" name="gov_assistance" value="Yes" required>
+                    <label for="radio9" onclick="validateAndProceed(6)">Yes</label>
                 </div>
                 <div class="button_cal breached_button_cal">
-                    <input type="radio" id="radio10" name="gov_assistance" value="No" required="">
-                    <label for="radio10">No</label>
+                    <input type="radio" id="radio10" name="gov_assistance" value="No" required>
+                    <label for="radio10" onclick="validateAndProceed(6)">No</label>
                 </div>
             </div>
-            <button type="button" class="kxnext_btndesign" onclick="validateStep(6)">
-                Next
-                <i class="fa-solid fa-arrow-right-long nextright_icondesign"></i>
-            </button>
         </div>
 
-        <!-- Step 7 - Personal Details -->
+        <!-- Step 7 (Keep Next button) -->
         <div class="form-step" id="step7">
             <form class="form_positionarea">
                 <h1 class="ypd_detailstext">Your personal details</h1>
@@ -248,14 +235,10 @@
                     Next
                     <i class="fa-solid fa-arrow-right-long jpersonalnextright_icondesign"></i>
                 </button>
-                <div class="jstartclaim_area">
-                    <img src="images/checked-1742549138187.png" class="start_eclaimgdesign">
-                    <span class="syctext_design">Start your claim</span>
-                </div>
             </form>
         </div>
 
-        <!-- Step 8 - Current Address -->
+        <!-- Step 8 (Keep Next button) -->
         <div class="form-step" id="step8">
             <form class="form_positionarea">
                 <h1 class="ypd_detailstext">Your current address</h1>
@@ -268,7 +251,7 @@
             </form>
         </div>
 
-        <!-- Step 9 - Contact Information -->
+        <!-- Step 9 (Keep Next button) -->
         <div class="form-step" id="step9">
             <form class="form_positionarea">
                 <h1 class="ypd_detailstext">Your contact information</h1>
@@ -288,14 +271,10 @@
                     Next
                     <i class="fa-solid fa-arrow-right-long personalnextright_icondesign"></i>
                 </button>
-                <div class="startclaim_area">
-                    <img src="images/checked-1742549138187.png" class="start_eclaimgdesign">
-                    <span class="syctext_design">Start your claim</span>
-                </div>
             </form>
         </div>
 
-        <!-- Step 10 - Documents -->
+        <!-- Step 10 (Keep as is) -->
         <div class="form-step" id="step10">
             <form class="ydoc_positionarea" id="finalForm">
                 <h1 class="ydcouments_textdesign">Your Documents</h1>
@@ -313,7 +292,7 @@
                 </p>
                 <h6 class="guidetext_design">Guidance notes for this document are highlighted and in blue</h6>
                 
-                <!-- Agreement content here (same as before) -->
+                <!-- Agreement content here -->
                 
                 <h2 class="cfag_texthighlight">Consent to CFA/FOA/Terms:</h2>
                 <h1 class="cfptext_design">
@@ -372,88 +351,90 @@
     <!-- ==============================footer section=============================================== -->
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+    <script src="js/script.js"></script>
     <script>
         // Initialize signature pad
         let signaturePad;
         document.addEventListener('DOMContentLoaded', function() {
             const canvas = document.getElementById('signature-pad');
-            signaturePad = new SignaturePad(canvas);
+            signaturePad = new SignaturePad(canvas, {
+                backgroundColor: 'rgb(255, 255, 255)'
+            });
             
             document.getElementById('clear-button').addEventListener('click', function() {
                 signaturePad.clear();
             });
         });
 
-        // Form navigation functions
+        // Navigation functions
         function showStep(stepNumber) {
-            // Hide all steps
             document.querySelectorAll('.form-step').forEach(step => {
                 step.classList.remove('active');
             });
-            
-            // Show the current step
             document.getElementById('step' + stepNumber).classList.add('active');
-            
-            // Scroll to top of form
             window.scrollTo(0, 0);
+        }
+
+        function validateAndProceed(currentStep) {
+            // Small delay to allow radio button to be checked
+            setTimeout(() => {
+                let isValid = true;
+                const currentStepElement = document.getElementById('step' + currentStep);
+                
+                // Check if any radio is selected
+                const radioGroups = currentStepElement.querySelectorAll('input[type="radio"][required]');
+                radioGroups.forEach(group => {
+                    const name = group.name;
+                    if (!currentStepElement.querySelector('input[name="' + name + '"]:checked')) {
+                        isValid = false;
+                        const radioContainer = group.closest('.button_row');
+                        if (radioContainer) {
+                            radioContainer.classList.add('invalid');
+                        }
+                    }
+                });
+
+                if (isValid) {
+                    // Special cases for steps 1 and 2
+                    if (currentStep === 1) {
+                        const isCustomerOrEmployee = document.querySelector('input[name="customer_or_employee"]:checked').value;
+                        if (isCustomerOrEmployee === 'No') {
+                            showStep(7);
+                            return;
+                        }
+                    }
+                    
+                    if (currentStep === 2) {
+                        const isNotified = document.querySelector('input[name="data_breach_notified"]:checked').value;
+                        if (isNotified === 'No') {
+                            showStep(7);
+                            return;
+                        }
+                    }
+                    
+                    // Proceed to next step
+                    showStep(currentStep + 1);
+                } else {
+                    alert('Please select an option to continue.');
+                }
+            }, 50);
         }
 
         function validateStep(currentStep) {
             let isValid = true;
-            
-            // Validate current step
             const currentStepElement = document.getElementById('step' + currentStep);
             const requiredInputs = currentStepElement.querySelectorAll('[required]');
             
             requiredInputs.forEach(input => {
-                if (!input.value && !(input.type === 'radio' && currentStepElement.querySelector('input[name="' + input.name + '"]:checked'))) {
+                if (!input.value) {
                     isValid = false;
                     input.classList.add('is-invalid');
                 } else {
                     input.classList.remove('is-invalid');
                 }
             });
-            
-            // For radio buttons
-            const radioGroups = currentStepElement.querySelectorAll('input[type="radio"][required]');
-            radioGroups.forEach(group => {
-                const name = group.name;
-                if (!currentStepElement.querySelector('input[name="' + name + '"]:checked')) {
-                    isValid = false;
-                    // Highlight the radio group
-                    const radioContainer = group.closest('.button_row') || group.closest('.radio-container');
-                    if (radioContainer) {
-                        radioContainer.classList.add('is-invalid');
-                    }
-                } else {
-                    const radioContainer = group.closest('.button_row') || group.closest('.radio-container');
-                    if (radioContainer) {
-                        radioContainer.classList.remove('is-invalid');
-                    }
-                }
-            });
-            
+
             if (isValid) {
-                // If step 1 and answer is "No", skip to step 7
-                if (currentStep === 1) {
-                    const isCustomerOrEmployee = document.querySelector('input[name="customer_or_employee"]:checked').value;
-                    if (isCustomerOrEmployee === 'No') {
-                        showStep(7);
-                        return;
-                    }
-                }
-                
-                // If step 2 and answer is "No", skip to step 7
-                if (currentStep === 2) {
-                    const isNotified = document.querySelector('input[name="data_breach_notified"]:checked').value;
-                    if (isNotified === 'No') {
-                        showStep(7);
-                        return;
-                    }
-                }
-                
-                // Otherwise proceed to next step
                 showStep(currentStep + 1);
             } else {
                 alert('Please fill in all required fields before proceeding.');
@@ -499,127 +480,5 @@
         // Initialize by showing first step
         showStep(1);
     </script>
-    <!-- At the bottom of your index.html file, before </body> -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/script.js"></script>
-<script>
-    // Form navigation functions
-    function showStep(stepNumber) {
-        // Hide all steps
-        document.querySelectorAll('.form-step').forEach(step => {
-            step.classList.remove('active');
-        });
-        
-        // Show the current step
-        document.getElementById('step' + stepNumber).classList.add('active');
-        
-        // Scroll to top of form
-        window.scrollTo(0, 0);
-    }
-
-    function validateStep(currentStep) {
-        let isValid = true;
-        
-        // Validate current step
-        const currentStepElement = document.getElementById('step' + currentStep);
-        const requiredInputs = currentStepElement.querySelectorAll('[required]');
-        
-        requiredInputs.forEach(input => {
-            if (!input.value && !(input.type === 'radio' && currentStepElement.querySelector('input[name="' + input.name + '"]:checked'))) {
-                isValid = false;
-                input.classList.add('is-invalid');
-            } else {
-                input.classList.remove('is-invalid');
-            }
-        });
-        
-        // For radio buttons
-        const radioGroups = currentStepElement.querySelectorAll('input[type="radio"][required]');
-        radioGroups.forEach(group => {
-            const name = group.name;
-            if (!currentStepElement.querySelector('input[name="' + name + '"]:checked')) {
-                isValid = false;
-                // Highlight the radio group
-                const radioContainer = group.closest('.button_row') || group.closest('.radio-container');
-                if (radioContainer) {
-                    radioContainer.classList.add('is-invalid');
-                }
-            } else {
-                const radioContainer = group.closest('.button_row') || group.closest('.radio-container');
-                if (radioContainer) {
-                    radioContainer.classList.remove('is-invalid');
-                }
-            }
-        });
-        
-        if (isValid) {
-            // If step 1 and answer is "No", skip to step 7
-            if (currentStep === 1) {
-                const isCustomerOrEmployee = document.querySelector('input[name="customer_or_employee"]:checked').value;
-                if (isCustomerOrEmployee === 'No') {
-                    showStep(7);
-                    return;
-                }
-            }
-            
-            // If step 2 and answer is "No", skip to step 7
-            if (currentStep === 2) {
-                const isNotified = document.querySelector('input[name="data_breach_notified"]:checked').value;
-                if (isNotified === 'No') {
-                    showStep(7);
-                    return;
-                }
-            }
-            
-            // Otherwise proceed to next step
-            showStep(currentStep + 1);
-        } else {
-            alert('Please fill in all required fields before proceeding.');
-        }
-    }
-
-    function submitForm() {
-        // Validate final step
-        const finalStep = document.getElementById('step10');
-        const requiredInputs = finalStep.querySelectorAll('[required]');
-        let isValid = true;
-        
-        requiredInputs.forEach(input => {
-            if (!input.value && !(input.type === 'radio' && finalStep.querySelector('input[name="' + input.name + '"]:checked'))) {
-                isValid = false;
-                input.classList.add('is-invalid');
-            } else {
-                input.classList.remove('is-invalid');
-            }
-        });
-        
-        // Check signature
-        const canvas = document.getElementById("signature-pad");
-        const ctx = canvas.getContext("2d");
-        const isEmpty = ctx.getImageData(0, 0, canvas.width, canvas.height).data.every(channel => channel === 0);
-        
-        if (isEmpty) {
-            isValid = false;
-            alert('Please provide your signature.');
-        }
-        
-        if (isValid) {
-            // Here you would normally submit the form data to your server
-            alert('Form submitted successfully!');
-            
-            // For demonstration, just show a success message
-            finalStep.innerHTML = `
-                <div class="text-center py-5">
-                    <h2>Thank You!</h2>
-                    <p>Your claim has been submitted successfully.</p>
-                    <p>We will contact you shortly with the next steps.</p>
-                </div>
-            `;
-        }
-    }
-
-    // Initialize by showing first step
-    showStep(1);
-</script>
 </body>
 </html>
