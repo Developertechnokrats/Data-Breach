@@ -1,0 +1,167 @@
+/*=================================mobile devices===========================*/
+@media screen and (max-width: 767px)
+{
+  .logodesign_area
+  {
+  	width: 50%;
+  }
+  .topheader_outsection
+  {
+  	padding: 10px 10px;
+  }
+  .outer_box
+  {
+  	margin-top: 20px;
+  	margin-bottom: 20px;
+  	padding: 0px 15px;
+  }
+  .breachclaim_headingtext
+  {
+  	font-size: 28px;
+  	line-height: 32px;
+  }
+  .breachclaim_paragrapghtext
+  {
+  	font-size: 15px;
+  }
+  .breachclaim_subheadingtext
+  {
+  	font-size: 22px;
+  	padding: 15px 0px 20px 0px;
+  }
+  .submitbtn_rgticondesign
+  {
+  	display: none;
+  }
+  .points_cal
+  {
+  	width: 100%;
+  	margin: 0px 0px 15px 0px;
+  }
+  .theclaim_detailssection
+  {
+  	margin-top: 40px;
+  }
+  .kheading_claim
+  {
+  	font-size: 21px;
+  }
+  .claim_bcktextdesign
+  {
+  	font-size: 13px;
+  }
+  .claim_scbcktextdesign
+  {
+  	font-size: 13px;
+  }
+  .footer_section
+  {
+  	padding: 40px 15px;
+  	margin: 0px 0px 0px 0px;
+  }
+  .yearpersonalform_fielddesign
+  {
+    width: 30%;
+  }
+  .ypd_detailstext
+  {
+    font-size: 25px;
+  }
+  .personalkxnext_btndesign
+  {
+    width: 100%;
+  }
+  .ydcouments_textdesign
+  {
+    font-size: 25px;
+  }
+  .ydedp_textdesign
+  {
+    font-size: 12px;
+  }
+  .ydepd_secondtextdesign
+  {
+    font-size: 12px;
+    padding: 15px 0px 0px 0px;
+    line-height: 18px;
+  }
+  .thrirdydedp_textdesign
+  {
+    font-size: 14px;
+  }
+  .fourthydedp_textdesign
+  {
+    font-size: 12px;
+  }
+  .guidetext_design
+  {
+    font-size: 14px;
+  }
+  .cfag_texthighlight
+  {
+    font-size: 15px;
+  }
+  .agreement_outsection
+  {
+    padding: 10px 10px;
+  }
+  .agreement_outsection p
+  {
+    font-size: 12px;
+  }
+  .agreement_outsection h3
+  {
+    font-size: 15px;
+  }
+  .document_unlistdesign li
+  {
+    font-size: 12px;
+  }
+  .cfptext_design
+  {
+    font-size: 13px;
+  }
+  #signature-pad
+  {
+    width: 100%;
+  }
+  #clear-button
+  {
+    right: 5%;
+  }
+  .jpersonalkxnext_btndesign
+  {
+    width: 100%;
+  }
+}
+/*=================================mobile devices===========================*/
+
+/*=================================tablet devices===========================*/
+@media screen and (min-width: 768px) and (max-width: 1023px)
+{
+  .outer_box
+  {
+  	margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0px 20px;
+  }
+  .theclaim_detailssection
+  {
+  	padding: 0px 20px;
+  }
+  .footer_section
+  {
+  	padding: 40px 50px;
+  	margin: 40px 0px 0px 0px;
+  }
+  .yearpersonalform_fielddesign
+  {
+    width: 32%;
+    margin: 0px 5px 0px 0px;
+  }
+  .personalkxnext_btndesign
+  {
+    width: 100%;
+  }
+}
+/*=================================tablet devices===========================*/
